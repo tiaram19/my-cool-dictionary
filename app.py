@@ -3,6 +3,15 @@ from pymongo import MongoClient
 import requests
 from datetime import datetime
 from bson import ObjectId
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+MONGODB_URI = os.environ.get("mongodb+srv://lxtiara:admin@cluster0.zhgzgvs.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME =  os.environ.get("dbsparta_plus_week2")
 
 
 app = Flask(__name__)
